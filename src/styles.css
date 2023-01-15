@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-active {
+    @apply mt-4 flex justify-between items-center
+}
+
+
+.btn-opt {
+    @apply px-3 py-2 border border-solid border-yellow-500 rounded-md text-gray-500 hover:bg-yellow-400 hover:text-gray-700 transition-all duration-300;
+}
+.favorite {
+    @apply w-6 h-6 text-gray-400 cursor-pointer;
+}
+.favorite-hovered {
+    @apply w-6 h-6 cursor-pointer hover:text-red-600;
+}
+
+.favorite-container:not(:hover) .favorite {
+    display: block;
+}
+.favorite-container:hover .favorite {
+    display: none;
+}
+.favorite-container:not(:hover) .favorite-hovered {
+    display: none;
+}
+.favorite-container:hover .favorite-hovered {
+    display: block;
+}
