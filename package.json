@@ -1,25 +1,25 @@
 {
-    "name": "my-project",
-    "scripts": {
-        "dev": "parcel src/index.html",
-        "build": "parcel build src/index.html",
-        "format": "prettier --write",
-        "prepare": "husky install"
-    },
-    "devDependencies": {
-        "@parcel/transformer-sass": "^2.8.2",
-        "husky": "^8.0.3",
-        "lint-staged": "^13.1.0",
-        "parcel": "^2.7.0",
-        "prettier": "2.8.1"
-    },
-    "dependencies": {
-        "postcss": "^8.4.21",
-        "sass": "^1.57.1",
-        "tailwindcss": "^3.2.4",
-        "yarn": "^1.22.19"
-    },
-    "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
-    }
+  "name": "my-project",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "parcel": "^2.7.0",
+    "prettier": "2.8.1"
+  },
+  "dependencies": {
+    "postcss": "^8.4.21",
+    "sass": "^1.57.1",
+    "tailwindcss": "^3.2.4",
+    "yarn": "^1.22.19"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }
