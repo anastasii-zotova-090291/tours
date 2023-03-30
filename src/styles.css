@@ -13,7 +13,7 @@
   @apply w-6 h-6 text-gray-400 cursor-pointer;
 }
 .favorite-hovered {
-  @apply w-6 h-6 cursor-pointer hover:text-red-600;
+  @apply w-6 h-6 cursor-pointer text-red-600;
 }
 
 .favorite-container:not(:hover) .favorite {
@@ -26,5 +26,11 @@
   display: none;
 }
 .favorite-container:hover .favorite-hovered {
+  display: block;
+}
+.favorite-container.is-favorite .favorite {
+  display: none;
+}
+.favorite-container.is-favorite .favorite-hovered {
   display: block;
 }

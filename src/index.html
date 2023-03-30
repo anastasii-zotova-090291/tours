@@ -8,16 +8,90 @@
   </head>
 
   <body>
-    <div class="bg-gray-50">
+    <div class="bg-gray-50 box-border relative">
       <div class="max-w-6xl mx-auto py-16 px-10 lg:px-0">
-        <div class="flex justify-end">
-          <button class="btn-opt">Добавить тур</button>
-        </div>
-        <div class="text-center mb-6">
-          <h1 class="font-sans text-3xl font-bold text-gray-600">Туры по миру</h1>
-          <p class="text-gray-500 text-xl mt-4">С нами ваши мечты становятся реальностью!</p>
-        </div>
-        <div id="tours" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 gap-8"></div>
+            <div class="flex justify-end ">
+              <button id="select-country" class="btn-opt mr-3">Все туры</button>
+              <button id="favoritesTours" class="btn-opt">Избранное</button>
+            </div>
+            <div class="text-center mb-6">
+              <h1 class="font-sans text-3xl font-bold text-gray-600">Туры по миру</h1>
+              <p class="text-gray-500 text-xl mt-4">С нами ваши мечты становятся реальностью!</p>
+            </div>
+            <div class="py-5 flex justify-between">
+              <button id="allCountry" data-country="Все страны" class="btn-opt all">Все страны</button>
+              <button id="tailand" data-country="Тайланд" class="btn-opt">Тайланд</button>
+              <button id="indonezia" data-country="Индонезия" class="btn-opt">Индонезия</button>
+              <button id="maldives" data-country="Мальдивы" class="btn-opt">Мальдивы</button>
+              <button id="kipr" data-country="Кипр" class="btn-opt">Кипр</button>
+              <button id="egipt" data-country="Египет" class="btn-opt">Египет</button>
+              <button id="tanzania" data-country="Танзания" class="btn-opt">Танзания</button>
+              <button id="mexico" data-country="Мексика" class="btn-opt">Мексика</button>
+            </div>
+            <div class="py-5 flex flex-col">
+              <h3 class="font-sans text-xl font-normal text-gray-500 pb-4">Стоимость тура</h3>
+              <div class="">
+                  <input id="priceMin" type="number" placeholder="минимальная стоимость" class="cursor-pointer px-3 py-2 border outline-none border-solid border-gray-200 rounded-md text-gray-500 hover:border-yellow-500 border-2 text-gray-700 transition-all duration-300">
+                  <span aria-hiden="true" class="mx-1">&mdash;</span>
+                  <input id="priceMax" type="number" placeholder="максимальная стоимость" class="cursor-pointer px-3 py-2 border outline-none border-solid border-gray-200 rounded-md text-gray-500 hover:border-yellow-500 border-2 text-gray-700 transition-all duration-300">
+              </div>
+            </div>
+            <div>
+              <label id="listbox-label" class="font-sans text- font-normal text-gray-500 pb-4">Рейтинг</label>
+              <div class="flex relative mt-4">
+                <select id="ratingTour" class="flex ml-1.5 w-36 text-base text-gray-500 focus:outline-none leading-3 cursor-pointer rounded-md border border-gray-200 bg-white py-2 pl-2 pr-10 text-left shadow-sm focus:border-yellow-500">
+                  <option value="0">Любой</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                </select>
+                
+              </div>
+            </div>
+            <div id="tours" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 gap-8"></div>
+            <div class="bg-gray-500/50 inset-0 flex justify-center fixed" id="modal_window" style="display: none;">
+              <div id="modal-window-form" class="bg-white w-6/9 border-gray-900 pb-12 py-3 px-10 rounded-lg flex flex-col gap-3  max-h-full my-16">
+                  <div id="modal-btn-close" class="flex justify-end pb-2"><button class="text-state-500 cursor text-xl">x</button></div>
+                  
+                  <div class="anketa flex justify-evenly">
+                    <div class="flex flex-col">
+                      <h3 class="text-xl font-semibold  text-gray-700">Личная информация</h3>
+                      <div class="mt-10 grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-6">
+                          <div class="sm:col-span-3 mt-2">
+                            <label for="first-name" class="block text-sm font-medium leading-6 text-gray-800">Имя</label>
+                            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1  ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-yellow-600 sm:text-sm sm:leading-6">
+                          </div>
+                  
+                          <div class="sm:col-span-3 mt-2">
+                            <label for="last-name" class="block text-sm font-medium leading-6 text-gray-800">Фамилия</label>
+                            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+                          </div>
+                          
+                          <div class="sm:col-span-3 mt-2">
+                            <label for="number" class="block text-sm font-medium leading-6 text-gray-800">Телефон</label>
+                            <input type="number" name="number" id="number" autocomplete="number" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+                          </div>
+                          
+                          <div class="sm:col-span-3 mt-2">
+                            <label for="email" class="block text-sm font-medium leading-6 text-gray-800">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+                          </div>
+
+                          <div class="sm:col-span-6 mt-2">
+                            <label for="comment" class="block text-sm font-medium leading-6 text-gray-800">Коментарий</label>
+                            <input id="comment" name="comment" type="text" autocomplete="text" class="block w-full h-24 min-h-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+                          </div>
+                          
+                          <div class="sm:col-span-6 mt-8 flex justify-end gap-x-6">
+                            <!--<button type="button" class="text-sm font-semibold leading-6 text-gray-900">Отмена</button>-->
+                            <button type="submit" class="rounded-md bg-yellow-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline   focus-visible:outline-yellow-600">Отправить</button>
+                          </div>
+                      </div>
+                    </div>
+                    <div id="booking-tour-info" class="sm:col-span-3 w-1/3 pb-8"></div>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
     <script type="module" src="app.js"></script>
