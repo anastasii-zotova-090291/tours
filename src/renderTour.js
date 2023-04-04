@@ -94,3 +94,46 @@ export function renderTour(tour, tours) {
 
     return element;
   }
+
+  export const getHtmlModalForm = () => {
+    const html = ` <div id="modal-window-form" class="bg-white w-6/9 border-gray-900 pb-12 py-3 px-10 rounded-lg flex flex-col gap-3  max-h-full my-16">
+    <div id="modal-btn-close" class="flex justify-end pb-2"><button class="text-state-500 cursor text-xl">x</button></div>
+    
+    <div id="anketa" class="anketa flex justify-evenly">
+      <div class="flex flex-col">
+        <h3 class="text-xl font-semibold  text-gray-700">Личная информация</h3>
+        <div class="mt-10 grid grid-cols-1 gap-y-4 gap-x-6 sm:grid-cols-6">
+            <div class="sm:col-span-3 mt-2">
+              <label for="first-name" class="block text-sm font-medium leading-6 text-gray-800">Имя</label>
+              <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1  ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-yellow-600 sm:text-sm sm:leading-6">
+            </div>
+    
+            <div class="sm:col-span-3 mt-2">
+              <label for="last-name" class="block text-sm font-medium leading-6 text-gray-800">Фамилия</label>
+              <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+            </div>
+            
+            <div class="sm:col-span-3 mt-2">
+              <label for="number" class="block text-sm font-medium leading-6 text-gray-800">Телефон</label>
+              <input type="number" name="number" id="number" autocomplete="number" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+            </div>
+            
+            <div class="sm:col-span-3 mt-2">
+              <label for="email" class="block text-sm font-medium leading-6 text-gray-800">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+            </div>
+
+            <div class="sm:col-span-6 mt-2">
+              <label for="comment" class="block text-sm font-medium leading-6 text-gray-800">Коментарий</label>
+              <input id="comment" name="comment" type="text" autocomplete="text" class="block w-full h-24 min-h-full rounded-md border-0 py-1.5 pl-2 text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-inset focus:ring-yellow-600 sm:text-sm sm:leading-6">
+            </div>
+            
+            <div class="sm:col-span-6 mt-8 flex justify-end gap-x-6">
+              <button id="btn-send" type="submit" class="rounded-md bg-yellow-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline   focus-visible:outline-yellow-600">Отправить</button>
+            </div>
+        </div>
+      </div>
+      <div id="booking-tour-info" class="sm:col-span-3 w-1/3 pb-8"></div>
+    </div>`;
+    return html;
+  }

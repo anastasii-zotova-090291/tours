@@ -19,8 +19,6 @@ async function getTours() {
 }
 
 
-
-
 function filterCountry(tours, country) {
   if (country) {
     tours = tours.filter((item) => {
@@ -66,6 +64,7 @@ if (toursJSON) {
   tours = JSON.parse(toursJSON)
 }
 
+
 async function init() {
     const tours = await getTours()
     renderTourList(tours);
@@ -84,29 +83,6 @@ async function init() {
     //Рейтинг
     document.getElementById('ratingTour').addEventListener('click', () => filterRating(tours))
     //Избранное
-
-    //Модальное окно
-    const modalWindow = document.getElementById("modal_window");
-    const modalWindowClose = document.getElementById("modal-btn-close")
-
-    function closeModal() {
-      modalWindow.style.display = "none"
-    }
-    modalWindowClose.addEventListener('click', closeModal)
-
-    const info = {
-      firstName: " ",
-      lastName: " ",
-      number: " ",
-      email: " "
-    }
-    
-    const url ="https://www.bit-by-bit.ru/api/student-projects/tours/[id]"
-    let response = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(info)
-    })
-    let data = await response.json()
 
     //document.getElementById('select-country').addEventListener('click', () => filterCountry(tours))
     //document.getElementById('tailand').addEventListener('click', () => filterCountry(tours, 'Тайланд'))

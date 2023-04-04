@@ -1,5 +1,9 @@
 export function renderPartTourInfoBookingForm(tour) {
     const container = document.getElementById('booking-tour-info');
+    if (!container) {
+      return;
+    }
+    container.dataset.tourId = tour.id;
     container.innerHTML = `
     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
     <img src="${tour.image}" alt="" class="w-full h-80" />
